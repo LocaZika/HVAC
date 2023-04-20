@@ -5,4 +5,31 @@ header{
     font-weight: 700;
     text-transform: uppercase;
   }
+  .navbar{
+    a{
+      position: relative;
+      overflow: hidden;
+      padding: 5px 0;
+      &::after{
+        content: ' ';
+        position: absolute;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #db2d2e;
+        height: 2px;
+        transition: width 0.3s linear;
+      }
+      &:hover{
+        &::after {
+          width: 100%;
+        }
+      }
+      &.active{
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

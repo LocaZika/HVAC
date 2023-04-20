@@ -1,7 +1,7 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import ContactBar from './ContactBar';
-import { Container, Grid, Paper, styled } from '@mui/material';
+import { Button, Container, Dialog, FormGroup, Grid, Paper, TextField, styled } from '@mui/material';
 import logo from '../../../Assets/Images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -15,50 +15,64 @@ const Item = styled(Paper)(({ theme }) => ({
     lineHeight: '0',
     ...theme.typography.body2,
     padding: theme.spacing(1),
+    margin: '0 32px 0 0',
     textAlign: 'center',
   }));
 export default function Header() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleSubmit = () => {};
   return (
     <header>
       <ContactBar />
       <Container maxWidth='lg'>
-        <Grid container justifyContent={'space-between'}>
-          <Grid item md={2} lg={2}>
+        <Grid container justifyContent={'space-between'} alignItems={'center'} p={4.375}>
+          <Grid item md={2}>
             <Item>
-              <Link to={'/home'}>
+              <Link to={'/'}>
                 <img src={logo} alt="Logo" />
               </Link>
             </Item>
           </Grid>
-          <Grid item md={10} lg={10}>
-            <Grid container>
+          <Grid item container md={10} >
+            <Grid container item md={9} justifyContent={'flex-end'} className='navbar' >
               <Item>
-                <Link to={'/home'}>home</Link>
+                <NavLink to={'/'} end >home</NavLink>
               </Item>
               <Item>
-                <Link to={'/cars'}>cars</Link>
+                <NavLink to={'/cars'}>cars</NavLink>
               </Item>
               <Item>
-                <Link to={'/blog'}>blog</Link>
+                <NavLink to={'/blog'}>blog</NavLink>
               </Item>
               <Item>
-                <Link to={'/about'}>about</Link>
+                <NavLink to={'/about'}>about</NavLink>
               </Item>
               <Item>
-                <Link to={'/contac'}>contact</Link>
+                <NavLink to={'/contac'}>contact</NavLink>
               </Item>
             </Grid>
-            <Grid container>
+            <Grid container item md={3} >
               <Item>
                 <Link to={'/cart'}>
                   <FontAwesomeIcon icon={faCartPlus} />
                 </Link>
               </Item>
               <Item>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <Button onClick={handleOpen} sx={{'&:hover': 'background-color: 0', color: '#353535', minWidth: 0}} >
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </Button>
+                <Dialog
+                  fullScreen
+                  open={open}
+                  onClose={handleClose}
+                >
+                  <Button onClick={handleClose}>+</Button>
+                  <FormGroup onSubmit={handleSubmit}>
+                    <TextField label='Search' variant="standard" placeholder='Search here...'></TextField>
+                  </FormGroup>
+                </Dialog>
               </Item>
             </Grid>
           </Grid>

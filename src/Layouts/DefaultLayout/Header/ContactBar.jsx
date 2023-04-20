@@ -20,7 +20,7 @@ export default function ContactBar() {
     <div className='header__top'>
       <Container maxWidth={'lg'}>
         <Grid columnSpacing={3} container sx={{justifyContent: 'space-between'}}>
-          <Grid container md={6} paddingY={0} sx={{alignItems: 'center'}}>
+          <Grid container item md={6} paddingY={0} sx={{alignItems: 'center'}}>
             <Grid item md={6}>
               <Item>
                 <FontAwesomeIcon icon={faClock} className='contact-icon' />
@@ -34,7 +34,7 @@ export default function ContactBar() {
               </Item>
             </Grid>
           </Grid>
-          <Grid container md={4} sx={{alignItems: 'center'}}>
+          <Grid container item md={4} sx={{alignItems: 'center'}}>
             <Grid item md={6}>
               <Item>
                 <FontAwesomeIcon icon={faPhone} className='contact-icon' />
