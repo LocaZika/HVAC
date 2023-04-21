@@ -1,5 +1,5 @@
 import { Header } from './Header';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import { publicRoutes, privateRoutes } from '../../Routes';
 import { Error404 } from '../../Errors';

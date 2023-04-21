@@ -2,7 +2,6 @@ import './Header.scss';
 import { NavLink, Link } from 'react-router-dom';
 import ContactBar from './ContactBar';
 import { Button, Container, Dialog, FormGroup, Grid, Paper, TextField, styled } from '@mui/material';
-import logo from '../../../Assets/Images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -14,9 +13,8 @@ const Item = styled(Paper)(({ theme }) => ({
     boxShadow: 'none',
     lineHeight: '0',
     ...theme.typography.body2,
-    padding: theme.spacing(1),
-    margin: '0 32px 0 0',
-    textAlign: 'center',
+    padding: '0',
+    marginRight: '60px',
   }));
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,11 +25,11 @@ export default function Header() {
     <header>
       <ContactBar />
       <Container maxWidth='lg'>
-        <Grid container justifyContent={'space-between'} alignItems={'center'} p={4.375}>
+        <Grid container justifyContent={'space-between'} alignItems={'center'} paddingY={4.375}>
           <Grid item md={2}>
             <Item>
               <Link to={'/'}>
-                <img src={logo} alt="Logo" />
+                <img src='https://preview.colorlib.com/theme/hvac/img/logo.png' alt="Logo" />
               </Link>
             </Item>
           </Grid>
@@ -50,7 +48,7 @@ export default function Header() {
                 <NavLink to={'/about'}>about</NavLink>
               </Item>
               <Item>
-                <NavLink to={'/contac'}>contact</NavLink>
+                <NavLink to={'/contact'}>contact</NavLink>
               </Item>
             </Grid>
             <Grid container item md={3} >
@@ -60,17 +58,36 @@ export default function Header() {
                 </Link>
               </Item>
               <Item>
-                <Button onClick={handleOpen} sx={{'&:hover': 'background-color: 0', color: '#353535', minWidth: 0}} >
+                <Button onClick={handleOpen} sx={{'&:hover': {backgroundColor: 'initial'}, color: '#353535', minWidth: 0, padding: 0}} >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Button>
                 <Dialog
                   fullScreen
                   open={open}
                   onClose={handleClose}
+                  PaperProps={{
+                    style: {
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      gap: '50px',
+                  }}}
                 >
-                  <Button onClick={handleClose}>+</Button>
+                  <Button onClick={handleClose} sx={{
+                    transform: 'rotate(45deg)',
+                    fontSize: '28px',
+                    width: '50px',
+                    height: '50px',
+                    backgroundColor: '#333',
+                    color: '#fff',
+                    borderRadius: '50%',
+                    padding: '0',
+                    minWidth: '0',
+                    ":hover": {
+                      backgroundColor: '#333',
+                    },
+                  }}>+</Button>
                   <FormGroup onSubmit={handleSubmit}>
-                    <TextField label='Search' variant="standard" placeholder='Search here...'></TextField>
+                    <TextField label='Search' variant="standard" placeholder='Search here...' inputProps={{style: {width: '470px', fontSize: '40px', color: '#999'}}}></TextField>
                   </FormGroup>
                 </Dialog>
               </Item>
