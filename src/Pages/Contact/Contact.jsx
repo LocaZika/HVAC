@@ -2,7 +2,7 @@ import React from 'react'
 import { Breadcrumb } from '../../Components';
 import { Container, Grid } from '@mui/material';
 import ContactForm from './ContactForm';
-import ContactInfo from './ContactInfo';
+import ContactAddress from './ContactAddress';
 
 export default function Contact() {
   return (
@@ -13,7 +13,7 @@ export default function Contact() {
           <ContactForm />
         </Grid>
         <Grid>
-          <ContactInfo />
+          <ContactAddress />
         </Grid>
       </Container>
     </div>
