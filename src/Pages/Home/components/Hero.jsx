@@ -1,6 +1,7 @@
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Container, Grid, Link, Tab } from "@mui/material";
 import { useState } from "react";
+import FormHeroSearch from "./FormHeroSearch";
 
 
 export default function Hero() {
@@ -73,21 +74,22 @@ export default function Hero() {
             <TabContext value={tab}>
               <Box>
                 <TabList onChange={handleChangeTab}>
-                  <Tab label='car rental' value='1' sx={{
-                    margin: '0 5px 5px 0',
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    color: '#323232 !important',
-                    padding: '7px 20px',
-                    border: 'none',
-                    borderRadius: '2px',
-                    background: '#ffffff',
-                  }} />
-                  <Tab label='buy car' value='2' />
+                  <Tab label='car rental' value='1' className="hero__tab" />
+                  <Tab label='buy car' value='2' className="hero__tab" />
                 </TabList>
               </Box>
-              <TabPanel value='1'>tab 1</TabPanel>
-              <TabPanel value='2'>tab 2</TabPanel>
+              <TabPanel value='1' className="hero__tab-panel">
+                <Box component={'h2'}>
+                  find your dream car
+                </Box>
+                <FormHeroSearch />
+              </TabPanel>
+              <TabPanel value='2' className="hero__tab-panel">
+                <Box component={'h2'}>
+                  buy your dream car
+                </Box>
+                <FormHeroSearch />
+              </TabPanel>
             </TabContext>
           </Box>
         </Grid>
