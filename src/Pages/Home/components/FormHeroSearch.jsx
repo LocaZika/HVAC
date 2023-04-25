@@ -9,7 +9,7 @@ const db = {
   mileage: [27, 25, 15, 10],
 }
 export default function FormHeroSearch() {
-  const {year, brand, model, mileage} = useSelector(formHeroState)
+  const {year, brand, model, mileage} = useSelector(formHeroState);
   const dispatch = useDispatch();
   const {
     changeYear,
@@ -29,6 +29,7 @@ export default function FormHeroSearch() {
   const selectMileage = (e) => {
     dispatch(changeMileage(e.target.value));
   };
+  
   return (
     <FormGroup>
       <Grid container className="hero__tab-panel__form">
@@ -95,7 +96,7 @@ export default function FormHeroSearch() {
           </FormControl>
         </Grid>
         <Grid item >
-          
+
         </Grid>
         <Button type="submit" sx={{
           textTransform: 'capitalize',
