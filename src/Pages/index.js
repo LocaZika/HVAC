@@ -7,4 +7,4 @@ export { default as Contact } from "./Contact/Contact";
 
 // Slices
 export { cartSlice } from "./Cart/cartSlice";
-export { formHeroSlice } from "./Home/components/formHeroSlice";
+export { formHeroSlice } from "./Home/components/Hero/formHeroSlice";
