@@ -1,6 +1,6 @@
-import { Box, Button, FormControl, FormGroup, Grid, MenuItem, Select, Slider } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { formHeroSlice, formHeroState } from './formHeroSlice';
+import { Box, Button, FormGroup, Grid, Slider } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { formHeroSlice } from './formHeroSlice';
 import FormHeroSelect from "./FormHeroSelect";
 import { useState } from "react";
 
@@ -23,7 +23,6 @@ const db = {
   },
 }
 export default function FormHeroSearch() {
-  // const {year, brand, model, mileage} = useSelector(formHeroState);
   const [sliderValue, setSliderValue] = useState([1000, 2000]);
   const dispatch = useDispatch();
   const {
@@ -52,66 +51,6 @@ export default function FormHeroSearch() {
     <FormGroup>
       <Grid container className="hero__tab-panel__form">
         <Grid item className="hero__tab-panel__form--listitem">
-          {/* <FormControl className="select__form">
-            <Box component={'p'}>select year</Box>
-            <Select
-              value={year}
-              onChange={selectYear}
-              className="select__form__box"
-            >
-              <MenuItem value=''>Select Year</MenuItem>
-              {
-                db.years.map((year, index) => (
-                  <MenuItem key={index} value={`${year}`}>{year}</MenuItem>
-                ))
-              }
-            </Select>
-          </FormControl>
-          <FormControl className="select__form">
-            <Box component={'p'}>select brand</Box>
-            <Select
-              value={brand}
-              onChange={selectBrand}
-              className="select__form__box"
-            >
-              <MenuItem value=''>Select brand</MenuItem>
-              {
-                db.brands.map((brand, index) => (
-                  <MenuItem key={index} value={`${brand}`}>{brand}</MenuItem>
-                ))
-              }
-            </Select>
-          </FormControl>
-          <FormControl className="select__form">
-            <Box component={'p'}>select model</Box>
-            <Select
-              value={model}
-              onChange={selectModel}
-              className="select__form__box"
-            >
-              <MenuItem value=''>Select model</MenuItem>
-              {
-                db.models.map((model, index) => (
-                  <MenuItem key={index} value={`${model}`}>{model}</MenuItem>
-                ))
-              }
-            </Select>
-          </FormControl>
-          <FormControl className="select__form">
-            <Box component={'p'}>select mileage</Box>
-            <Select
-              value={mileage}
-              onChange={selectMileage}
-              className="select__form__box"
-            >
-              <MenuItem value=''>Select mileage</MenuItem>
-              {
-                db.mileage.map((mileage, index) => (
-                  <MenuItem key={index} value={`${mileage}`}>{mileage}</MenuItem>
-                ))
-              }
-            </Select>
-          </FormControl> */}
           <FormHeroSelect db={db} selectFunction={selectFuncs} />
         </Grid>
         <Grid item className="hero__tab-panel__form--slider">

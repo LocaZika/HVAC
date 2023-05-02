@@ -14,9 +14,9 @@ export default function Footer() {
     return date.getFullYear();
   }
   return (
-    <footer>
-      <Container>
-        <Grid container
+    <footer className='set-bg'>
+      <Container fixed>
+        <Grid container justifyContent={'space-between'}
           sx={{
             paddingBottom: '60px',
             borderBottom: '1px solid rgba(255, 255, 255, 0.2)',

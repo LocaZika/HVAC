@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div className='contact'>
       <Breadcrumb currentPath={'contact us'} />
-      <Container>
+      <Container fixed>
         <Grid paddingY={12.5} borderBottom={'1px solid rgba(0, 0, 0, 0.1)'}>
           <ContactForm />
         </Grid>

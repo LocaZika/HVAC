@@ -19,7 +19,7 @@ export default function Breadcrumb({currentPath}) {
     </Typography>,
   ];
   return (
-    <Grid className='breadcrumb'>
+    <Grid className='breadcrumb set-bg'>
       <Container sx={{textAlign: 'center'}}>
         <Grid item lg={12}>
           <h2>{currentPath}</h2>
