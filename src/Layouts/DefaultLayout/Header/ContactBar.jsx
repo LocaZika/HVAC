@@ -12,15 +12,14 @@ const Item = styled(Paper)(({ theme }) => ({
     lineHeight: '0',
     ...theme.typography.body2,
     padding: theme.spacing(1),
-    textAlign: 'center',
     color: '#fff',
 }));
 export default function ContactBar() {
   return (
     <div className='header__top'>
-      <Container maxWidth={'lg'}>
-        <Grid columnSpacing={3} container sx={{justifyContent: 'space-between'}}>
-          <Grid container item md={6} paddingY={0} sx={{alignItems: 'center'}}>
+      <Container fixed>
+        <Grid container>
+          <Grid container item md={7} lg={7} paddingY={0} sx={{alignItems: 'center'}}>
             <Grid item md={6}>
               <Item>
                 <FontAwesomeIcon icon={faClock} className='contact-icon' />
@@ -34,7 +33,7 @@ export default function ContactBar() {
               </Item>
             </Grid>
           </Grid>
-          <Grid container item md={4} sx={{alignItems: 'center'}}>
+          <Grid container item md={5} lg={5} sx={{alignItems: 'center'}}>
             <Grid item md={6}>
               <Item>
                 <FontAwesomeIcon icon={faPhone} className='contact-icon' />

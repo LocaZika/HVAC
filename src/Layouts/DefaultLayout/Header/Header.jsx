@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header>
       <ContactBar />
-      <Container maxWidth='lg'>
+      <Container fixed>
         <Grid container justifyContent={'space-between'} alignItems={'center'} paddingY={4.375}>
           <Grid item md={2}>
             <Item>
