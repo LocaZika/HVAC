@@ -8,7 +8,7 @@ export default function Latest() {
     <Box component={'section'} className={'lastest spad'}>
       <Container fixed>
         <Grid container>
-          <Grid item sm={12} md={12} lg={12}>
+          <Grid item xs={12} md={12} lg={12}>
             <Box className='section-title'>
               <Box component={'span'}>
                 our blogs

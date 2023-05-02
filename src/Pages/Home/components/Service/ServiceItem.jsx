@@ -11,7 +11,7 @@ export default function ServiceItem({img}) {
     for (let i = 0; i < objLength; i++) {
       const objValue = Object.values(img)[i];
       template.push(
-        <Grid item paddingX={'15px'} sm={6} md={6} lg={3}>
+        <Grid item paddingX={'15px'} xs={12} md={6} lg={3}>
           <Box className="service__item">
             <Box
               component={'img'}

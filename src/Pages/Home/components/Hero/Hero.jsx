@@ -1,17 +1,26 @@
 import './Hero.scss';
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { Box, Container, Grid, Link, Tab } from "@mui/material";
+import { Box, Container, Grid, Link, Tab, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import FormHeroSearch from "./FormHeroSearch";
 
 export default function Hero() {
   const [tab, setTab] = useState('1');
+  const breakpointFix = useMediaQuery(theme => (
+    theme.breakpoints.down('md')
+  ));
   const handleChangeTab = (e, newTab) => setTab(newTab);
   return (
      <Box component={'section'} className="hero set-bg">
         <Container fixed>
           <Grid container>
-            <Grid item md={7} lg={7}>
+            <Grid item xs={12} md={7} lg={7} sx={
+              breakpointFix === true ? {
+                paddingBottom: '40px',
+              } : {
+                paddingBottom: 0,
+              }
+            }>
               {/* Title */}
               <Box sx={{paddingTop: 13.75}}>
                 <Box sx={{
@@ -73,7 +82,7 @@ export default function Hero() {
                 border: '1px solid #ffffff',
               }}>Learn more</Link>
             </Grid>
-            <Grid item md={5} lg={5}>
+            <Grid item xs={12} md={5} lg={5}>
               <Box>
                 <TabContext value={tab}>
                   <Box>

@@ -1,39 +1,20 @@
-import { Box, Container, Unstable_Grid2 as Grid, Link } from '@mui/material';
+import { useMediaQuery, Box, Container, Unstable_Grid2 as Grid, Link } from '@mui/material';
 import './Feature.scss';
 import FeatureItem from './FeatureItem';
 
-const featureItems = [
-  {
-    title: 'engine',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-1.png',
-  },
-  {
-    title: 'turbo',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-2.png',
-  },
-  {
-    title: 'cooling',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-3.png',
-  },
-  {
-    title: 'suspension',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-4.png',
-  },
-  {
-    title: 'electrical',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-5.png',
-  },
-  {
-    title: 'break',
-    img: 'https://preview.colorlib.com/theme/hvac/img/feature/feature-6.png',
-  },
-]
 export default function Feature() {
+  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('md'));
   return (
     <Box component={'section'} className='feature spad'>
       <Container disableGutters={true} fixed={true} >
         <Grid container>
-          <Grid md={4} lg={4} paddingX={'15px'}>
+          <Grid md={4} lg={4} paddingX={'15px'} sx={
+            breakpointFix === true ? {
+              paddingBottom: '500px',
+            } : {
+              paddingBottom: 0,
+            }
+          }>
             <Box className={'section-title feature__title'}>
               <Box component={'span'}>
                 our features
@@ -58,7 +39,7 @@ export default function Feature() {
           </Grid>
           <Grid md={4} mdOffset={4} lg={4} lgOffset={4} paddingX={'15px'}>
             <Grid container>
-              <FeatureItem feature={featureItems} />
+              <FeatureItem />
             </Grid>
           </Grid>
         </Grid>

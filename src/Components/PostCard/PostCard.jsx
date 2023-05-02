@@ -188,7 +188,7 @@ export default function PostCard(props) {
     <>
       {
         templates.map((component, index) => (
-            <Grid key={index} item sm={12} md={6} lg={4} paddingX={'15px'}>
+            <Grid key={index} item xs={12} md={6} lg={4} paddingX={'15px'}>
               {component}
             </Grid>
         ))

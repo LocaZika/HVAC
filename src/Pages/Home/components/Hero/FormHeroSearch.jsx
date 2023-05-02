@@ -50,7 +50,11 @@ export default function FormHeroSearch() {
   return (
     <FormGroup>
       <Grid container className="hero__tab-panel__form">
-        <Grid item className="hero__tab-panel__form--listitem">
+        <Grid
+          item
+          className="hero__tab-panel__form--listitem"
+          container
+        >
           <FormHeroSelect db={db} selectFunction={selectFuncs} />
         </Grid>
         <Grid item className="hero__tab-panel__form--slider">

@@ -1,10 +1,12 @@
 import './ProductCard.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { Card, CardActions, CardContent, Typography, Grid, Box } from "@mui/material";
+import { Card, CardActions, CardContent, Typography, Grid, Box, useMediaQuery } from "@mui/material";
 import { Link } from 'react-router-dom';
 
-export default function ProductCard({products}) {
+export default function ProductCard(props) {
+  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('md'));
+  const { products } = props;
   return (
     products.map(({
       id,
@@ -17,8 +19,14 @@ export default function ProductCard({products}) {
       status,
       gearboxType,
     }) => (
-      <Grid key={id} item sm={6} md={4} lg={3} className='product-card'>
-        <Card sx={{ maxWidth: 345, }}>
+      <Grid key={id} item xs={12} md={4} lg={3} className='product-card'>
+        <Card sx={
+          breakpointFix === true ? {
+            maxWidth: '100%',
+          } : {
+            maxWidth: 345,
+          }
+        }>
           <Carousel
             showThumbs={false}
             swipeable={true}

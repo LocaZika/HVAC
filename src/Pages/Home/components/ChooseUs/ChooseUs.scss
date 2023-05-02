@@ -1,4 +1,4 @@
-.choose-us{
+.home .choose-us{
   background: #f7f7f7;
   position: relative;
   padding-bottom: 85px;
@@ -56,9 +56,11 @@
     transition: all 0.5s linear;
   }
   &.active{
-    .choose-us__video{
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      width: 100%;
+    .choose-us{
+      &__video{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        width: 100%;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { FormControl, Box, Select, MenuItem } from "@mui/material";
+import { FormControl, Box, Select, MenuItem, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import { formHeroState } from "./formHeroSlice";
 import { Fragment } from "react";
@@ -12,21 +12,23 @@ export default function FormHeroSelect({db, selectFunction}) {
     for (let i = 0; i < objLength; i++) {
       const objValue = Object.values(db)[i]; // object of values
       renderTemplate.push(
-        <FormControl className="select__form">
-        <Box component={'p'}>{objValue.title}</Box>
-        <Select
-          value={selectorValue[i]}
-          onChange={selectFunction[i]}
-          className="select__form__box"
-        >
-          <MenuItem value=''>Select Year</MenuItem>
-          {
-            objValue.values.map((item, index) => (
-              <MenuItem key={index} value={`${item}`}>{item}</MenuItem>
-            ))
-          }
-        </Select>
-      </FormControl>
+        <Grid item xs={12} md={6} lg={6}>
+        <FormControl className="select__form" >
+          <Box component={'p'}>{objValue.title}</Box>
+            <Select
+              value={selectorValue[i]}
+              onChange={selectFunction[i]}
+              className="select__form__box"
+            >
+              {
+                objValue.values.map((item, index) => (
+                  <MenuItem key={index} value={`${item}`}>{item}</MenuItem>
+                ))
+              }
+            </Select>
+        </FormControl>
+
+        </Grid>
       )
     }
   };

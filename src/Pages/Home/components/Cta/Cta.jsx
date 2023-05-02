@@ -6,7 +6,7 @@ export default function Cta() {
     <Box component={'section'} className='cta'>
       <Container fixed>
         <Grid container>
-          <Grid item sm={12} md={6} lg={6} paddingX={'15px'}>
+          <Grid item xs={12} md={6} lg={6} paddingX={'15px'}>
             <Box className='cta__item set-bg' sx={{
               backgroundImage: 'url(https://preview.colorlib.com/theme/hvac/img/cta/cta-1.jpg)',
             }} >
@@ -16,7 +16,7 @@ export default function Cta() {
               </Box>
             </Box>
           </Grid>
-          <Grid item sm={12} md={6} lg={6} paddingX={'15px'}>
+          <Grid item xs={12} md={6} lg={6} paddingX={'15px'}>
             <Box className='cta__item set-bg' sx={{
               backgroundImage: 'url(https://preview.colorlib.com/theme/hvac/img/cta/cta-2.jpg)',
             }}>
