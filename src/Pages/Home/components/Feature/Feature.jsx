@@ -3,12 +3,12 @@ import './Feature.scss';
 import FeatureItem from './FeatureItem';
 
 export default function Feature() {
-  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('md'));
+  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('lg'));
   return (
     <Box component={'section'} className='feature spad'>
       <Container disableGutters={true} fixed={true} >
         <Grid container>
-          <Grid md={4} lg={4} paddingX={'15px'} sx={
+          <Grid sm={12} lg={4} paddingX={'15px'} sx={
             breakpointFix === true ? {
               paddingBottom: '500px',
             } : {
@@ -37,7 +37,7 @@ export default function Feature() {
               <Link href='#' underline='none' className='partners'>Our partners</Link>
             </Box>
           </Grid>
-          <Grid md={4} mdOffset={4} lg={4} lgOffset={4} paddingX={'15px'}>
+          <Grid sm={12} lg={4} lgOffset={4} paddingX={'15px'}>
             <Grid container>
               <FeatureItem />
             </Grid>

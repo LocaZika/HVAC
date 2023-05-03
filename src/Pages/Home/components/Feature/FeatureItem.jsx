@@ -31,7 +31,7 @@ export default function FeatureItem() {
     <>
       {
         featureItems.map(({title, img}, index) => (
-          <Grid key={index} sm={4} md={6} lg={6} className='feature__item'>
+          <Grid key={index} sm={4} md={4} lg={6} className='feature__item'>
             <Box className='feature__item__icon' >
               <Box component={'img'} src={img}></Box>
             </Box>

@@ -14,7 +14,7 @@ const textList = [
 ];
 export default function ChooseUs() {
   const [active, setActive] = useState(false);
-  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('md'));
+  const breakpointFix = useMediaQuery(theme => theme.breakpoints.down('lg'));
   const videoUrl = 'https://www.youtube.com/watch?v=RiVs0E554o0';
   const handlePlay = () => {
     setActive(true);
@@ -33,7 +33,6 @@ export default function ChooseUs() {
           <Grid
             item
             xs={12}
-            md={5}
             lg={5}
             marginBottom={
               breakpointFix === true ? '40px' : ''
@@ -64,9 +63,6 @@ export default function ChooseUs() {
           <Grid
             item
             xs={12}
-            md={
-              active === true ? 12 : 7
-            }
             lg={
               active === true ? 12 : 7
             }

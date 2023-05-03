@@ -7,14 +7,14 @@ import FormHeroSearch from "./FormHeroSearch";
 export default function Hero() {
   const [tab, setTab] = useState('1');
   const breakpointFix = useMediaQuery(theme => (
-    theme.breakpoints.down('md')
+    theme.breakpoints.down('lg')
   ));
   const handleChangeTab = (e, newTab) => setTab(newTab);
   return (
      <Box component={'section'} className="hero set-bg">
         <Container fixed>
           <Grid container>
-            <Grid item xs={12} md={7} lg={7} sx={
+            <Grid item xs={12} md={12} lg={7} sx={
               breakpointFix === true ? {
                 paddingBottom: '40px',
               } : {
@@ -82,7 +82,7 @@ export default function Hero() {
                 border: '1px solid #ffffff',
               }}>Learn more</Link>
             </Grid>
-            <Grid item xs={12} md={5} lg={5}>
+            <Grid item xs={12} md={12} lg={5}>
               <Box>
                 <TabContext value={tab}>
                   <Box>
